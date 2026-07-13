@@ -25,10 +25,11 @@ function generateDailySchedules() {
   morningLimit = randomInt(15, 25);
   eveningLimit = dailyCap - morningLimit;
 
-  // Schedule morning run between 11:00 AM and 11:59 AM (11:00 - 12:00)
+  // Schedule morning run between 10:00 AM and 2:00 PM (10:00 - 14:00)
+  const morningHour = randomInt(10, 13);
   const morningMin = randomInt(0, 59);
-  morningTime = { hour: 11, minute: morningMin };
-  morningExecuted = (currentHour > 11 || (currentHour === 11 && currentMinute >= morningMin));
+  morningTime = { hour: morningHour, minute: morningMin };
+  morningExecuted = (currentHour > morningHour || (currentHour === morningHour && currentMinute >= morningMin));
 
   // Schedule evening run between 4:00 PM and 4:59 PM (16:00 - 17:00)
   const eveningMin = randomInt(0, 59);
@@ -39,8 +40,11 @@ function generateDailySchedules() {
   emailTime = { hour: 23, minute: 0 };
   emailExecuted = (currentHour > 23 || (currentHour === 23 && currentMinute >= 0));
 
+  const morningAmpm = morningHour >= 12 ? 'PM' : 'AM';
+  const morningDisplayHour = morningHour % 12 || 12;
+
   logger.info(`[Scheduler] Daily schedules generated (Total target: ${dailyCap} jobs):`);
-  logger.info(` - Morning run (Limit: ${morningLimit}): 11:${String(morningMin).padStart(2, '0')} AM ${morningExecuted ? '(Already passed today)' : '(Pending)'}`);
+  logger.info(` - Morning run (Limit: ${morningLimit}): ${String(morningDisplayHour).padStart(2, '0')}:${String(morningMin).padStart(2, '0')} ${morningAmpm} ${morningExecuted ? '(Already passed today)' : '(Pending)'}`);
   logger.info(` - Evening run (Limit: ${eveningLimit}): 04:${String(eveningMin).padStart(2, '0')} PM ${eveningExecuted ? '(Already passed today)' : '(Pending)'}`);
   logger.info(` - Email run:   11:00 PM ${emailExecuted ? '(Already passed today)' : '(Pending)'}`);
 }

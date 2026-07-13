@@ -13,7 +13,7 @@ LAA is a robust, autonomous, and config-driven automation tool designed to apply
    - Launches a visible browser window so you can watch the bot navigate pages, read listings, and fill out forms in real-time.
 3. **Robust Background Scheduler:**
    - Runs continuously and schedules runs at randomized times:
-     - **Morning Run:** Triggers randomly between **11:00 AM and 12:00 PM**.
+     - **Morning Run:** Triggers randomly between **10:00 AM and 2:00 PM**.
      - **Evening Run:** Triggers randomly between **4:00 PM and 5:00 PM**.
    - **Randomized Split Limits:** Randomly splits the daily cap of **40 applications** between the two runs (e.g., 18 in the morning, 22 in the evening; or 17 in the morning, 23 in the evening).
 4. **Nightly Email Reports:**
@@ -124,11 +124,11 @@ npm run scheduler
 
 ### The Dynamic Schedule Logic
 - Every midnight, the scheduler resets:
-  1. Generates a random daily target limit between **44 and 50** (e.g., `46`).
-  2. Generates a random morning target $M$ between **15 and 25** (e.g., `19`).
-  3. Sets the evening target to the remainder (e.g., `46 - 19 = 27`).
-  4. Schedules a random morning check time between **11:00 AM and 11:59 AM**.
-  5. Schedules a random evening check time between **4:00 PM and 4:59 PM**.
+  1. Generates a random daily target limit of **40** jobs.
+  2. Generates a random morning target $M$ between **15 and 25** (e.g., `18`).
+  3. Sets the evening target to the remainder (e.g., `40 - 18 = 22`).
+  4. Schedules a random morning check time between **10:00 AM and 2:00 PM**.
+  5. Schedules a random evening check time between **4:00 PM and 5:00 PM**.
   6. Schedules the email report dispatch for exactly **11:00 PM**.
 
 ### Keyword Inclusions and Exclusions
