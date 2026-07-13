@@ -1,0 +1,28 @@
+# Dependency directory
+node_modules/
+
+# Local Playwright session storage (contains cookies and active auth state)
+session/
+storageState.json
+
+# Daily CSV/Excel application records
+excel/
+*.csv
+
+# Application logs
+logs/
+*.log
+
+# Personal configurations (ignored to prevent leaking credentials and email settings)
+config/email.json
+config/profile.json
+config/answers.json
+config/company_cache.json
+
+# Personal resumes and PDFs
+resume/
+*.pdf
+
+# System files
+.DS_Store
+Thumbs.db

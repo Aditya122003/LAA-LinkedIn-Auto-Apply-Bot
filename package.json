@@ -1,0 +1,20 @@
+{
+  "name": "laa",
+  "version": "1.0.0",
+  "description": "LinkedIn Auto-Apply Bot — personal use, session-cookie-based, no stored credentials",
+  "main": "src/main.js",
+  "scripts": {
+    "login": "node src/login.js",
+    "start": "node src/main.js",
+    "scheduler": "node src/scheduler.js",
+    "test:score": "node -e \"const s=require('./src/scorer');console.log(s.scoreJob({title:'Node.js Developer',description:'We need Node.js Express.js MongoDB REST API experience. 1-2 years. Angular is a plus.'}));\""
+  },
+  "keywords": [],
+  "author": "Aditya Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^9.0.3",
+    "playwright": "^1.x",
+    "readline-sync": "^1.x"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Your Name",
+  "current_title": "Software Developer",
+  "experience_years": 1,
+  "role_titles": [
+    "Software Engineer",
+    "Software Developer",
+    "Full Stack Developer",
+    "Backend Developer",
+    "Node.js Developer"
+  ],
+  "core_skills": [
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "JavaScript"
+  ],
+  "secondary_skills": [
+    "HTML",
+    "CSS",
+    "Git",
+    "GitHub"
+  ],
+  "deprioritize_if_mentions": [
+    "5+ years",
+    "Senior",
+    "Lead",
+    "Staff Engineer",
+    "Principal"
+  ],
+  "locations": [
+    "Delhi",
+    "Remote"
+  ],
+  "min_relevance_score": 0,
+  "min_company_followers": 15000,
+  "daily_application_cap": 40,
+  "resume_file_path": "./resume/Your_Resume.pdf"
+}

@@ -1,0 +1,8 @@
+{
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 465,
+  "smtp_secure": true,
+  "smtp_user": "YOUR_GMAIL_ADDRESS@gmail.com",
+  "smtp_pass": "YOUR_GMAIL_APP_PASSWORD",
+  "recipient_email": "YOUR_NOTIFICATION_RECEIVER_EMAIL@gmail.com"
+}
